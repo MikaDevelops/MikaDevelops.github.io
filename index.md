@@ -1,4 +1,8 @@
-
+ToC:  
+- [WarehouseApplication](#warehouseapplication)  
+  - [WarehouseApplication project status](#warehouseapplication-project-status)  
+- [UEFroomFinder](#uefroomfinder)  
+  - [UEFroomFinder project status](#uefroomfinder-project-status)
 
 ## WarehouseApplication
 
@@ -14,7 +18,7 @@ _image 1: In main view there is 'serialized products' tab and 'add new serialize
 ![Screenshot from edit view.](editview.jpg)  
 _image 2: In edit view information fetched from database is shown and can be edited. If product is leased it has to have a lease id and if product is in production it has to have a room id._
 
-### Project status
+### WarehouseApplication project status
 
 At this moment program is not working. I'm advancing my studies and this is on hold. When I get around to work with this project first thing is to make the intallations process so that program writes information to a settings file. Creating database should only once use admin credentials and make a database and a user account to MariaDB with enough privileges to operate the newly created database. In a small setting there could be some data warehouse for deleted record that user level account cannot manipulate.
 
@@ -25,5 +29,5 @@ Small one file proof of concept. Scripts were tested in SharePoint classic page 
 ![Screenshot from html-page.](roomfinder.jpg)  
 _image 3: Just a basic web-page with vanilla JS to handle filtering._
 
-### Project status
-As this was done on my free time and I was told not to waste my time on this, it is on hold too. Beacause this is a good excercise I will pick this one up when I'm done with web-development course (unless there is an assignment or a course project where this fits).
+### UefRoomFinder project status
+As I have a lot of courses on and there clearly wasn't any need for this kind of application, this is on hold too like WarehouseApp. Beacause this is a good excercise I will pick this one up when I'm done with web-development course (unless there is an assignment or a course project where this fits).
