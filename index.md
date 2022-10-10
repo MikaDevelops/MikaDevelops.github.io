@@ -15,3 +15,8 @@ _image 2: In edit view information fetched from database is shown and can be edi
 ### Project status
 
 At this moment program is not working. I'm advancing my studies and this is on hold. When I get around to work with this project first thing is to make the intallations process so that program writes information to a settings file. Creating database should only once use admin credentials and make a database and a user account to MariaDB with enough privileges to operate the newly created database. In a small setting there could be some data warehouse for deleted record that user level account cannot manipulate.
+
+## UEFroomFinder
+
+Small one file proof of concept. Scripts were tested in SharePoint classic page as code snippets. As there were zero enthusiasm for implementation into some sort of working web-page or SharePoint page, this was left as it is. As a value proposition I think this was a better solution than an Excel-file, which will require running separate application in cloud (or on computer) rather than throwing few hundred kilobytes of JS to browser.
+
