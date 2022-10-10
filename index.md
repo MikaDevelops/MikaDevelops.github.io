@@ -1,3 +1,5 @@
+
+
 ## WarehouseApplication
 
 An application for two course assignments. Relational database for Data Management Systems course and JavaFX UI for User Interface Programmin course.
@@ -18,5 +20,10 @@ At this moment program is not working. I'm advancing my studies and this is on h
 
 ## UEFroomFinder
 
-Small one file proof of concept. Scripts were tested in SharePoint classic page as code snippets. As there were zero enthusiasm for implementation into some sort of working web-page or SharePoint page, this was left as it is. As a value proposition I think this was a better solution than an Excel-file, which will require running separate application in cloud (or on computer) rather than throwing few hundred kilobytes of JS to browser.
+Small one file proof of concept. Scripts were tested in SharePoint classic page as code snippets.
 
+![Screenshot from html-page.](roomfinder.jpg)  
+_image 3: Just a basic web-page with vanilla JS to handle filtering._
+
+### Project status
+As this was done on my free time and I was told not to waste my time on this, it is on hold too. Beacause this is a good excercise I will pick this one up when I'm done with web-development course (unless there is an assignment or a course project where this fits).
