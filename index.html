@@ -262,6 +262,12 @@
                                     <p class="mb-4">One html-file with JavaScript. Minimal viable product for testing.</p>
                                     <p class="mb-4">JavaScript used to filter room information.</p>
                                     <p class="mb-4"><a href="https://github.com/MikaDevelops/UEFroomFinder">Link to Github repository</a></p>
+
+                                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
+                                            
+                                            <a href="#portfolio">UEF Room finder demo page</a>
+                                        </div>
+                                    <br>
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Close Window
@@ -379,6 +385,830 @@
                 </div>
             </div>
         </div>
+
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">UEF Room Finder in action</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    
+                                    <!-- Portfolio Modal - Text-->
+
+                                <div class="roomfinder">
+                                    Valitse kampus / Choose Campus<br>
+
+                                    <form>
+                                        
+                                        Kampus:<br>
+                                        <input type="checkbox" id="kampus1" name="kampus1" value="Joensuu" checked="checked">
+                                        <label for="kampus1">Joensuu</label><br>
+                                        <input type="checkbox" id="kampus2" name="kampus2" value="Kuopio" checked="checked">
+                                        <label for="kampus2">Kuopio</label>
+                                        <br><br>
+                                        <input type="checkbox" id="vc" name="vc" value="vc">
+                                        <label for="vc">Videoneuvottelulaite (voi liittyä UEF:n MS Teams kokouksiin)<br>
+                                        Videoconferencing device (can join UEF MS Teams meeting)</label>
+                                        <br><br>
+                                
+                                        Minimi tilantarve (henkilöä)<br>
+                                        Minimum needed capacity for people (persons):
+                                        <div class="slidercontainer">
+                                            <input type="range" min="2" max="600" value="25" class="slider" id="liuku">
+                                            <br><input id="luku" name="luku" type="number" value="2" min="2" max="600"><br><br>
+                                        </div>
+                                
+                                        Rajaa suuria tiloja (kapasiteetti pienempi kuin)<br>
+                                        Limit largest shown rooms (capacity smaller than):
+                                        <div class="slidercontainer2">
+                                            <input type="range" min="30" max="600" value="600" class="slider" id="liukuMax">
+                                            <br><input id="lukuMax" name="lukuMax" type="number" value="600" min="30" max="600"><br><br>
+                                        </div>
+                                        <button type="button" onclick="listaa()">listaa tilat</button> <br><br><br>
+                                        
+                                        
+                                
+                                    </form>
+                                
+                                
+                                
+                                    
+                                <script>
+
+
+                                var tilat = {
+
+                                "Joensuu": [
+                                    {
+                                        "tunnus":"M100",
+                                        "kapasiteetti":250,
+                                        "videoneuvottelulaite":true,
+                                        "ohje":"https://127.0.0.1:3000"
+                                    }, 
+                                    {
+                                        "tunnus":"M101",
+                                        "kapasiteetti":126,
+                                        "videoneuvottelulaite":false,
+                                        "ohje":"https://127.0.0.1:3000"
+                                    },
+                                    {
+                                        "tunnus":"M102",
+                                        "kapasiteetti":50,
+                                        "videoneuvottelulaite": false,
+                                        "ohje":"https://127.0.0.1:3000"
+                                    },
+                                    {
+                                        "tunnus":"C1",
+                                        "kapasiteetti":600,
+                                        "videoneuvottelulaite":false,
+                                        "ohje":"https://127.0.0.1:3000"
+                                    },
+                                    {
+                                    "tunnus":"AG100",
+                                    "kapasiteetti":80,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG101",
+                                    "kapasiteetti":50,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG102",
+                                    "kapasiteetti":30,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG103",
+                                    "kapasiteetti":22,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG104",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG105",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG106",
+                                    "kapasiteetti":40,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG108",
+                                    "kapasiteetti":28,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG201",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG202",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG203",
+                                    "kapasiteetti":16,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG205",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG206",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG207",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG208",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG209",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG210",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG211",
+                                    "kapasiteetti":15,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AG212",
+                                    "kapasiteetti":15,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AT100",
+                                    "kapasiteetti":119,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"AT102",
+                                    "kapasiteetti":25,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AT103",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AT104",
+                                    "kapasiteetti":16,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AT201",
+                                    "kapasiteetti":12,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AU100",
+                                    "kapasiteetti":250,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"AU101",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AU102",
+                                    "kapasiteetti":40,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"AU104",
+                                    "kapasiteetti":12,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AU105",
+                                    "kapasiteetti":8,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"AU110",
+                                    "kapasiteetti":10,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AU111",
+                                    "kapasiteetti":56,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"AU112",
+                                    "kapasiteetti":31,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"AU202",
+                                    "kapasiteetti":40,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AU203",
+                                    "kapasiteetti":20,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AU204",
+                                    "kapasiteetti":29,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AU205",
+                                    "kapasiteetti":40,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"AU206",
+                                    "kapasiteetti":70,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"AU207",
+                                    "kapasiteetti":20,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AU208",
+                                    "kapasiteetti":20,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AU209",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"AU210",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"AU270",
+                                    "kapasiteetti":14,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"BOR100",
+                                    "kapasiteetti":56,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"BOR101",
+                                    "kapasiteetti":56,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"BOR102",
+                                    "kapasiteetti":25,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"BOR201",
+                                    "kapasiteetti":12,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"BOR301",
+                                    "kapasiteetti":10,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"BOR302",
+                                    "kapasiteetti":6,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"C2",
+                                    "kapasiteetti":150,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"CK216",
+                                    "kapasiteetti":12,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"E100",
+                                    "kapasiteetti":184,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"E101",
+                                    "kapasiteetti":25,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"E102",
+                                    "kapasiteetti":25,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"E103",
+                                    "kapasiteetti":25,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"E200",
+                                    "kapasiteetti":90,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"E212",
+                                    "kapasiteetti":16,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"E213",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"E214",
+                                    "kapasiteetti":22,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"E215",
+                                    "kapasiteetti":84,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"F100",
+                                    "kapasiteetti":108,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"F101",
+                                    "kapasiteetti":54,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"F102",
+                                    "kapasiteetti":18,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"F103",
+                                    "kapasiteetti":41,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"F104",
+                                    "kapasiteetti":29,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"F109",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"F110",
+                                    "kapasiteetti":20,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"F111",
+                                    "kapasiteetti":40,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"F112",
+                                    "kapasiteetti":41,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"F113",
+                                    "kapasiteetti":40,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"F200",
+                                    "kapasiteetti":36,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"F201",
+                                    "kapasiteetti":36,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"F202",
+                                    "kapasiteetti":60,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"F210",
+                                    "kapasiteetti":84,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"F211",
+                                    "kapasiteetti":42,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"F226c",
+                                    "kapasiteetti":12,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"M103",
+                                    "kapasiteetti":80,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"M104",
+                                    "kapasiteetti":30,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"M105",
+                                    "kapasiteetti":47,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"M106",
+                                    "kapasiteetti":42,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"M107",
+                                    "kapasiteetti":42,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"M108",
+                                    "kapasiteetti":28,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"M109",
+                                    "kapasiteetti":42,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"M110",
+                                    "kapasiteetti":42,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"M201",
+                                    "kapasiteetti":15,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"M301",
+                                    "kapasiteetti":72,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"M302",
+                                    "kapasiteetti":12,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"M303",
+                                    "kapasiteetti":48,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"M304",
+                                    "kapasiteetti":21,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"M305",
+                                    "kapasiteetti":21,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"M306",
+                                    "kapasiteetti":12,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"MET1100",
+                                    "kapasiteetti":15,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"N100",
+                                    "kapasiteetti":84,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"N101",
+                                    "kapasiteetti":56,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"N102",
+                                    "kapasiteetti":24,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"N103",
+                                    "kapasiteetti":32,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"N104",
+                                    "kapasiteetti":32,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"N105",
+                                    "kapasiteetti":40,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"N106",
+                                    "kapasiteetti":36,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"N107",
+                                    "kapasiteetti":40,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"N110",
+                                    "kapasiteetti":30,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"N111",
+                                    "kapasiteetti":20,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"N113",
+                                    "kapasiteetti":40,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"N114",
+                                    "kapasiteetti":25,
+                                    "videoneuvottelulaite":false,
+                                    },
+                                    {
+                                    "tunnus":"N201",
+                                    "kapasiteetti":14,
+                                    "videoneuvottelulaite":true,
+                                    },
+                                    {
+                                    "tunnus":"N202",
+                                    "kapasiteetti":15,
+                                    "videoneuvottelulaite":false,
+                                    }
+                                ],
+
+                                "Kuopio": [
+                                    {
+                                        "tunnus":"SN210",
+                                        "kapasiteetti":75,
+                                        "videoneuvottelulaite": true
+                                    },
+                                    {
+                                        "tunnus":"CA200",
+                                        "kapasiteetti":200,
+                                        "videoneuvottelulaite": true
+                                    },
+                                    {
+                                        "tunnus":"ME100",
+                                        "kapasiteetti":60,
+                                        "videoneuvottelulaite": false
+                                    }
+                                ]
+                                }
+
+                                    // Minimiliukuri ja minimi syötekenttä
+                                    // Minimum slider and input field
+                                    var liukuri = document.getElementById("liuku");
+                                    var luku = document.getElementById("luku");
+                                    // Maksimiliukuri ja maksimi syötekenttä
+                                    // Maximum slider and input field
+                                    var liukuriMax = document.getElementById("liukuMax");
+                                    var lukuMax = document.getElementById("lukuMax");
+                                
+                                    // jos minimikapasiteettiliukuria siirretään,
+                                    // asetetaan arvo syötekenttään
+                                    // if minimum slider is moved, update value to input field
+                                    liukuri.oninput = function(){ 
+                                        
+                                        luku.value = liukuri.value;
+                                        
+                                    }
+                                    
+                                    // kun lukuarvokenttään syötetään luku, suoritetaan
+                                    // tämä funktio, joka asettaa liukurin arvon samaan
+                                    // when a value is inserted to input field, slider is updated
+                                    luku.oninput = function(){
+                                
+                                        liukuri.value = luku.value;
+                                
+                                    }
+                                
+                                
+                                    // Maksimikapasiteettiliukurin ja -syötekentän vastaavat
+                                    liukuriMax.oninput = function(){ 
+                                        lukuMax.value = liukuriMax.value;
+                                     }
+                                    lukuMax.oninput = function(){
+                                            liukuriMax.value = lukuMax.value;
+                                    }
+                                
+                                    function listaa(){
+                                
+                                        const taulukonID = "tilataulukko";
+                                
+                                        /* Sisäinen funktio taulukon täyttämiseksi. 
+                                            Inner function for populating result table. */
+                                        function taytaTaulukko(kampus, tila){
+                                            // Luodaan rivi.
+                                            // Create row.
+                                            let rivi = document.createElement("TR");
+                                
+                                            // Kampus solu. Campus cell.
+                                            sisalto = kampus;
+                                            let kampusSolu = document.createElement("TD");
+                                            kampusSolu.appendChild(document.createTextNode(sisalto));
+                                
+                                            // Huone tunnus solu. Room identifier cell.
+                                            let tunnusSolu = document.createElement("TD");
+                                            tunnusSolu.appendChild(document.createTextNode(tilat[kampus][tila].tunnus));
+                                                    
+                                            // Kapasiteetti solu. Capacity cell.
+                                            let kapasiteettiSolu = document.createElement("TD");
+                                            kapasiteettiSolu.appendChild(document.createTextNode(tilat[kampus][tila].kapasiteetti));
+                                
+                                            // Ohjelinkki solu. Guide link cell.
+                                            let ohjeSolu = document.createElement("TD");
+                                            if (tilat[kampus][tila].ohje != undefined){
+                                                let ohjeSisalto = document.createTextNode("ohjesivu");
+                                                let linkki = document.createElement("a");
+                                                linkki.appendChild(ohjeSisalto);
+                                                linkki.href = tilat[kampus][tila].ohje;
+                                                linkki.title = "tilan ohjesivu / guide web page"
+                                                ohjeSolu.appendChild(linkki);}
+                                                    
+                                            // Lisätään solut riville. Add cells to row.
+                                            rivi.appendChild(kampusSolu);
+                                            rivi.appendChild(tunnusSolu);
+                                            rivi.appendChild(kapasiteettiSolu);
+                                            rivi.appendChild(ohjeSolu);
+                                                    
+                                            // Lisätään rivi taulukkoon. Add row to table.
+                                            document.getElementById(taulukonID).appendChild(rivi);
+                                        }
+                                
+                                        // numerosyötekentän arvot rajoihin, jos ylityksiä tai alituksia
+                                        // input field values to thereshold
+                                        if (luku.value < 2){
+                                            luku.value = 2;
+                                        }else if (luku.value > 600){
+                                            luku.value = 600;
+                                        }
+                                        if (lukuMax.value < 30){
+                                            lukuMax.value = 30;
+                                        }else if (lukuMax.value > 600){
+                                            lukuMax.value = 600;
+                                        }
+                                
+                                        // poistetaan ensin vanha taulukko, jos löytyy
+                                        // remove old table if present
+                                        var elementti = document.getElementById(taulukonID);
+                                        if (elementti != null){
+                                            elementti.remove();
+                                        }
+                                        
+                                        // luodaan taulukko
+                                        // create a table and set id.
+                                        var taulu = document.createElement("TABLE");
+                                        taulu.setAttribute("id", taulukonID);
+                                        document.getElementById("taulukko").insertAdjacentElement("afterend", taulu);
+                                
+                                        // Luodaan otsikkorivi.
+                                        // Create table header row.
+                                        var otsikkorivi = document.createElement("TR");
+                                        var otsikkoSolu0 = document.createElement("TH");
+                                        var otsikkoSolu1 = document.createElement("TH");
+                                        var otsikkoSolu2 = document.createElement("TH");
+                                        var otsikkoSolu3 = document.createElement("TH");
+                                
+                                        otsikkoSolu0.appendChild(document.createTextNode("Kampus"));
+                                        otsikkoSolu1.appendChild(document.createTextNode("Tila / Room"));
+                                        otsikkoSolu2.appendChild(document.createTextNode("Max henk."));
+                                        otsikkoSolu3.appendChild(document.createTextNode("Ohje / Guide"));
+                                
+                                        otsikkorivi.appendChild(otsikkoSolu0);
+                                        otsikkorivi.appendChild(otsikkoSolu1);
+                                        otsikkorivi.appendChild(otsikkoSolu2);
+                                        otsikkorivi.appendChild(otsikkoSolu3);
+                                        document.getElementById(taulukonID).appendChild(otsikkorivi);
+                                
+                                    // kampus luuppi
+                                    for(let kampus in tilat){
+                                
+                                        //tila luuppi
+                                        for (let tila in tilat[kampus]){
+                                
+                                            // Jos kampus1 valittuna
+                                            if (document.getElementById('kampus1').checked
+                                            && tilat[kampus][tila].kapasiteetti >= luku.value
+                                            && tilat[kampus][tila].kapasiteetti <= lukuMax.value)
+                                            {
+                                                if (kampus == "Joensuu" && document.getElementById('vc').checked == 
+                                                tilat[kampus][tila].videoneuvottelulaite){
+                                
+                                                    taytaTaulukko(kampus, tila);
+                                
+                                                } else if (kampus == "Joensuu" && !document.getElementById('vc').checked){
+                                                    
+                                                    taytaTaulukko(kampus, tila);
+                                
+                                                }
+                                            }
+                                            
+                                            // Jos kampus2 valittuna
+                                            if (document.getElementById('kampus2').checked
+                                            && tilat[kampus][tila].kapasiteetti >= luku.value
+                                            && tilat[kampus][tila].kapasiteetti <= lukuMax.value)
+                                            {
+                                                if (kampus == "Kuopio"&& document.getElementById('vc').checked == 
+                                                tilat[kampus][tila].videoneuvottelulaite){
+                                                    
+                                                    taytaTaulukko(kampus, tila);
+                                
+                                                } else if (kampus == "Kuopio" && !document.getElementById('vc').checked){
+                                                    
+                                                    taytaTaulukko(kampus, tila);
+                                
+                                                } 
+                                            }
+                                
+                                        }
+                                        }  
+                                    }
+                                    
+                                
+                                </script>
+                                
+                                <div id="taulukko"></div>
+                                
+                            </div>
+                                
+                                    <br>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
